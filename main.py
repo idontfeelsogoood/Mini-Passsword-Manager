@@ -17,13 +17,15 @@ print("Welcome to PasswordManager !!!")
 while main_menu_Flag:
     
     show_menu()
-    
-    try:
-        user_choice = int(input("Option: "))                #User choice 
 
+    #User choice
+    try:
+        user_choice = int(input("Option: "))                 
+
+    #Exception if user type wrong input 'fancy dot'
     except ValueError:
         time.sleep(1)
-        waiting_processing_dot()                                #Exception if user type wrong input 'fancy dot'
+        waiting_processing_dot()                                
 
         print("You must Input Integer")
         user_choice = 0
@@ -39,8 +41,9 @@ while main_menu_Flag:
     elif user_choice == 2:
         logged = False
 
+        #loggin
         checking_user_login = str(input("Login: "))
-        checking_user_password = str(input("Password: "))                           #loggin
+        checking_user_password = str(input("Password: "))                           
         if(login_user(checking_user_login,checking_user_password)):
 
             print("\nLogin Sucessfull\n")
@@ -60,13 +63,14 @@ while main_menu_Flag:
         print("\nCreating...\n")
         creating_new_user_login = str(input("Login: "))
         creating_new_user_password = str(input("Password: "))
-        creating_user(creating_new_user_login,creating_new_user_password)       #function to create new user
-        
-    elif user_choice == 4:
-        clear_database()      #Special function to delete all database records
-
+        creating_user(creating_new_user_login,creating_new_user_password)       
     
-    elif user_choice == 5:                                                  #EXIT
+    #Special function to delete all database records
+    elif user_choice == 4:
+        clear_database()      
+
+    #EXIT  
+    elif user_choice == 5:                                                  
         main_menu_Flag = False
     
     

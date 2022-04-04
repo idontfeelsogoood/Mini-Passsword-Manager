@@ -19,13 +19,14 @@ def amount_of_users():
         
 #Creating new user
 def creating_user(new_login,new_password):
-    new_user_id = amount_of_users()                             # id
-    new_user = db.User(new_user_id,new_login,new_password)      # passing arguments to 'User' Class from db.py
-    session.add(new_user)                                          # adding user to database
+    new_user_id = amount_of_users()                             
+    new_user = db.User(new_user_id,new_login,new_password)      
+    session.add(new_user)                                          
     session.commit()
-
+    
+#Special function do delete all records from database 
 def clear_database():
-    session.query(db.User).delete()                 #Special function do delete all records from database 
+    session.query(db.User).delete()                 
     session.commit()
 
 

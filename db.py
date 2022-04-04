@@ -18,20 +18,20 @@ engine = create_engine('sqlite:///sqlalchemy.sqlite',echo=True)
 #Base declaration
 base = declarative_base()
 
-
+#Creating table structure
 class User (base):
     __tablename__ = 'user'
 
-    user_id = Column(Integer, primary_key=True)             #Creating table structure
+    user_id = Column(Integer, primary_key=True)            
     user_login = Column(String)
     user_password = Column(String)
     
     def __init__(self,user_id,user_login,user_password):
-        self.user_id = user_id                                  #Constructor need to pass arguments for new user instanlty to class
+        self.user_id = user_id                                  
         self.user_login = user_login
         self.user_password = user_password
 
-
-base.metadata.create_all(engine)                #CREATE DATABASE 'smthing like commit()'
+#CREATE DATABASE 
+base.metadata.create_all(engine)                
 
 
