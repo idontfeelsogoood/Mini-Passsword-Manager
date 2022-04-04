@@ -1,5 +1,5 @@
 #Mini Password Manager (sqlAlchemy)
-This is my first project in which I'm using sqlAlchemy
+This i s my first project in which I'm using sqlAlchemy
 
 #What this program Do?
 This is simple Menu program in which user can choose options 
